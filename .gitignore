@@ -27,3 +27,6 @@ venv.bak/
 
 # pyCharm
 .idea/
+
+#cacheFiles
+.cache/*
