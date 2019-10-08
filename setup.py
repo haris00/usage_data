@@ -9,5 +9,9 @@ setup(name='Distutils',
       author='haris tanvir',
       test_suite='nose.collector',
       packages=find_packages(),
-      install_requires=['click']
+      install_requires=['click'],
+      entry_points={
+        'console_scripts': [
+            'usage_data = usage_data.__main__:main'
+        ]}
       )

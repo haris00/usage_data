@@ -12,12 +12,12 @@ PERIOD = (12, 18)
 @click.command()
 @click.argument('file_name')
 @click.argument('task')
-@click.argument('id')
-def main(file_name, task, id):
+@click.argument('building_id')
+def main(file_name, task, building_id):
     """
     Simple CLI for getting energy usage data
     """
-    hours, kwhs_usage = extract_data_from_id(id, file_name, csv)
+    hours, kwhs_usage = extract_data_from_id(building_id, file_name, csv)
     output = "invalid"
     if task == PEAK_USAGE:
         max_kwh_usage_time, max_kwh_usage = peak_usage(hours, kwhs_usage)

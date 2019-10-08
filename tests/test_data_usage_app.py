@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import unittest
 import csv
 from usage_data.lib import extract_data_from_id, peak_usage, format_peak_usage, expected_savings, \
@@ -8,9 +10,9 @@ class UsageData(unittest.TestCase):
 
     def test_extract_data_from_id(self):
         hours = tuple(range(0, 24))
-        kwhs_usage = (6.439924, 4.898962, 4.725122, 5.889937, 7.055993, 8.147902, 9.526529, 9.654547, 9.497643, 7.656154, 6.922413
-                      , 4.821351, 5.117135, 6.103418, 7.221611, 10.372388, 12.87602, 15.43456, 18.041841, 18.20572,
-                      16.7765, 15.114921, 12.12373, 8.830045)
+        kwhs_usage = (6.439924, 4.898962, 4.725122, 5.889937, 7.055993, 8.147902, 9.526529, 9.654547, 9.497643, 7.656154,
+                      6.922413, 4.821351, 5.117135, 6.103418, 7.221611, 10.372388, 12.87602, 15.43456, 18.041841,
+                      18.20572, 16.7765, 15.114921, 12.12373, 8.830045)
         extracted_hours, extracted_kwhs_usage = extract_data_from_id('white_house', 'test_data/example_homes_data.csv'
                                                                      , csv)
         self.assertEqual((extracted_hours, extracted_kwhs_usage), (hours, kwhs_usage))
