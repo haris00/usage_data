@@ -19,9 +19,12 @@ def format_peak_usage(time, kwh_usage):
 
 
 def expected_savings(hours, kwhs_usage, percentage_saving, period):
+    """Returns expected savings in kwh and associated hour"""
     pass
 
 
 def format_expected_savings(kwh_savings):
-    pass
+    formatted_kwh_savings = round(kwh_savings, 1)
+    output_format = f'{formatted_kwh_savings} kWh'
+    return output_format
 

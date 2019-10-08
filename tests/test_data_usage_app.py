@@ -36,7 +36,7 @@ class UsageData(unittest.TestCase):
 
     def test_format_expected_savings(self):
         kwh_savings = 30.37
-        self.assertEqual(format_expected_savings(kwh_savings), "30 kWh")
+        self.assertEqual(format_expected_savings(kwh_savings), "30.4 kWh")
 
 
 if __name__ == '__main__':
