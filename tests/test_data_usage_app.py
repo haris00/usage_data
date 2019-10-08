@@ -32,7 +32,7 @@ class UsageData(unittest.TestCase):
                       , 4.821351, 5.117135, 6.103418, 7.221611, 10.372388, 12.87602, 15.43456, 18.041841, 18.20572,
                       16.7765, 15.114921, 12.12373, 8.830045]
 
-        self.assertEqual(expected_savings(hours, kwhs_usage, 30, (12, 18)), 22.550091899999998)
+        self.assertEqual(expected_savings(hours, kwhs_usage, 30, (12, 18)), 26.476667399999997)
 
     def test_format_expected_savings(self):
         kwh_savings = 30.37
