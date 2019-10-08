@@ -16,7 +16,7 @@ To perform an editable install within a virtual environment:
 ```
 python -m venv env
 source env/bin/activate
-git clone <link>
+git clone https://github.com/haris00/usage_data
 pip install usage_data
 ```
 
