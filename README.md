@@ -8,6 +8,7 @@ A simple CLI application that extracts peak energy usage and expected savings fr
 * Python 3.7.2
 * pip
 
+Also you would need a data file in csv format to parse
 ### Installing
 
 To perform an editable install within a virtual environment:
