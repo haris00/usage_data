@@ -22,9 +22,9 @@ class UsageData(unittest.TestCase):
         self.assertEqual(peak_usage(hours, kwhs_usage), (18, 18.20572))
 
     def test_format_peak_usage(self):
-        time = 75.7829
-        kwh_usage = 13
-        self.assertEqual(format_peak_usage(time, kwh_usage), "74.5 kWh at 13:00")
+        time = 13
+        kwh_usage = 75.7829
+        self.assertEqual(format_peak_usage(time, kwh_usage), "75.8 kWh at 13:00")
 
     def test_expected_savings(self):
         hours = list(range(0, 23))
