@@ -17,7 +17,11 @@ def main(file_name, task, building_id):
     """
     Simple CLI for getting energy usage data
     """
-    hours, kwhs_usage = extract_data_from_id(building_id, file_name, csv)
+    try:
+        hours, kwhs_usage = extract_data_from_id(building_id, file_name, csv)
+    except FileNotFoundError as e:
+        print(f'Cannot find file {file_name}')
+        exit()
     output = "invalid"
     if task == PEAK_USAGE:
         max_kwh_usage_time, max_kwh_usage = peak_usage(hours, kwhs_usage)

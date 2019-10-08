@@ -1,6 +1,5 @@
 def extract_data_from_id(id, file_name, csv):
-    try:
-        with open(file_name) as usage_data:
+    with open(file_name) as usage_data:
             csv_reader = csv.reader(usage_data, delimiter=',')
             # to skip the header
             next(csv_reader)
@@ -10,9 +9,6 @@ def extract_data_from_id(id, file_name, csv):
                 if str(row[0]) == str(id):
                     hours.append(int(row[1]))
                     kwhs_usage.append(float(row[2]))
-    except FileNotFoundError as e:
-        print(f'Cannot find file {file_name}')
-        exit()
     hours_kwh_usage_bundle = list(zip(hours, kwhs_usage))
     hours_kwh_usage_bundle.sort(key=lambda x: x[0])
     hours, kwhs_usage = zip(*hours_kwh_usage_bundle)
