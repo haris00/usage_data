@@ -9,6 +9,9 @@ def extract_data_from_id(id, file_name, csv):
                 if str(row[0]) == str(id):
                     hours.append(int(row[1]))
                     kwhs_usage.append(float(row[2]))
+    if len(hours) == 0 or len(kwhs_usage) == 0:
+        # TODO: Better to raise exception here
+        return None, None
     hours_kwh_usage_bundle = list(zip(hours, kwhs_usage))
     hours_kwh_usage_bundle.sort(key=lambda x: x[0])
     hours, kwhs_usage = zip(*hours_kwh_usage_bundle)

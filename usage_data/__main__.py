@@ -22,7 +22,10 @@ def main(file_name, task, building_id):
     except FileNotFoundError as e:
         print(f'Cannot find file {file_name}')
         exit()
-    output = "invalid"
+    if hours is None or kwhs_usage is None:
+        print(f'"{building_id}" not in the data set!')
+        exit()
+    output = "invalid task"
     if task == PEAK_USAGE:
         max_kwh_usage_time, max_kwh_usage = peak_usage(hours, kwhs_usage)
         output = format_peak_usage(max_kwh_usage_time, max_kwh_usage)
